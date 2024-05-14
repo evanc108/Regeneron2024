@@ -35,8 +35,13 @@ export const handleExtraction = async (protocol) => {
 
 function countCategoryEntries(data) {
     const categoryCounts = {};
+    // Iterate over each category in the data object
     for (const category in data) {
-        categoryCounts[category] = Object.keys(data[category]).length;
+        // Check if the data object has this category as its own property
+        if (data.hasOwnProperty(category)) {
+            // Count the number of items (keys) in each category
+            categoryCounts[category] = Object.keys(data[category]).length;
+        }
     }
     return categoryCounts;
 }
@@ -53,8 +58,10 @@ function calculateTotalBurden(jsonData) {
         "Additional": 46.0
     };
 
+    var jsonObject = JSON.parse(jsonData);
+    console.log("json object", jsonObject);
     // First, get the counts of steps in each category
-    const categoryCounts = countCategoryEntries(jsonData);
+    const categoryCounts = countCategoryEntries(jsonObject);
 
     // Now calculate the total burden using the weights
     let totalBurden = 0;
