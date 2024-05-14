@@ -1,0 +1,68 @@
+.feedback-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: -2.5%;
+}
+
+.upload_file {
+    border-color: rgb(189, 189, 189);
+    border-width: 1px;
+    border-style: solid;
+    padding-left: 100px;
+    padding-right: 100px;
+    width: 40%;
+    height: 68vh;
+    margin-top: 5%;
+    border-radius: 15px;
+    background-color: white;
+    overflow: hidden;
+    padding-top: 10.5%;
+}
+
+.protocol-container {
+    border-color: rgb(189, 189, 189);
+    border-width: 1px;
+    border-style: solid;
+    padding-left: 100px;
+    padding-right: 100px;
+    width: 40%;
+    height: 68vh;
+    margin-top: 5%;
+    border-radius: 15px;
+    background-color: white;
+    overflow: hidden;
+    padding-top: 10.5%;
+}
+
+.score-container {
+    border-color: rgb(189, 189, 189);
+    border-width: 1px;
+    border-style: solid;
+    padding: 100px;
+    width: 10%;
+    height: 65.3vh;
+    margin-top: 5%;
+    border-radius: 15px;
+    background-color: white;
+    margin-left: 30px;
+}
+
+.score {
+    font-size: large;
+}
+
+.unique-score {
+    font-size: 86px;
+    font-weight: 500;
+}
+
+
+.iframe-container {
+    top: -28%;
+    width: 130%;
+    left: -15%;
+    height: 150%;  /* Adjust height as needed */
+    overflow: hidden;
+    position: relative;
+}
