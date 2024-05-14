@@ -18,8 +18,11 @@ export const handleExtraction = async (protocol) => {
         }
 
     });
+    console.log(response.data.choices[0].message.content);
     return calculateBurdenByCategory(response.data.choices[0].message.content);
 }
+
+
 
 function countWords(string) {
     const wordsToCount = [
