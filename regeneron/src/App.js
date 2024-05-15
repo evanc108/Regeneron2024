@@ -1,7 +1,8 @@
 import './App.css';
 import React, { useState } from 'react';
 import Feedback from './pages/Feedback';
-
+import Related from './pages/Related';
+import related from './related.json';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <p>Psychological Burden: {burden.psychological}</p>
       </div> */}
       <Feedback></Feedback>
+      {/* <Related data={related} /> */}
     </div>
   );
 }
