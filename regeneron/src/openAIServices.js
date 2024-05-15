@@ -25,12 +25,14 @@ export const handleExtraction = async (protocol) => {
     }, {
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer `
+            'Authorization': `Bearer`
         }
 
     });
+    var jsonObject = JSON.parse(response.data.choices[0].message.content);
+    console.log("json object", jsonObject);
     console.log(response.data.choices[0].message.content);
-    return calculateTotalBurden(response.data.choices[0].message.content);
+    return jsonObject;
 }
 
 function countCategoryEntries(data) {
@@ -46,7 +48,7 @@ function countCategoryEntries(data) {
     return categoryCounts;
 }
 
-function calculateTotalBurden(jsonData) {
+export function calculateTotalBurden(jsonData) {
     const weights = {
         "Medication": 47,
         "Lab and Blood": 46,
@@ -58,17 +60,26 @@ function calculateTotalBurden(jsonData) {
         "Additional": 46.0
     };
 
-    var jsonObject = JSON.parse(jsonData);
-    console.log("json object", jsonObject);
     // First, get the counts of steps in each category
-    const categoryCounts = countCategoryEntries(jsonObject);
+    const categoryCounts = countCategoryEntries(jsonData);
 
-    // Now calculate the total burden using the weights
+    // Now calculate the total burden and scores for each category using the weights
     let totalBurden = 0;
+    const categoryScores = {};
     Object.keys(weights).forEach(category => {
-        totalBurden += (categoryCounts[category] * weights[category]);
+        const count = categoryCounts[category];
+        const weight = weights[category];
+        const score = count * weight;
+        totalBurden += score;
+        categoryScores[category] = score;
     });
+
     console.log("categoryCounts: ", categoryCounts);
-    console.log("total burden: ", totalBurden);
-    return totalBurden;
+    console.log("categoryScores: ", categoryScores);
+    console.log("total burden: ", Math.round(totalBurden));
+
+    return {
+        totalBurden: Math.round(totalBurden),
+        categoryScores: categoryScores
+    };
 }
