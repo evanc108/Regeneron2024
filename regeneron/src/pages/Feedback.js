@@ -4,18 +4,26 @@ import { handleExtraction } from '../openAIServices';
 import { PropagateLoader } from 'react-spinners';
 import Upload from "../img/upload.png";
 import pdfToText from 'react-pdftotext';
+import { calculateTotalBurden } from '../openAIServices';
+import { FaChevronDown, FaChevronRight } from 'react-icons/fa';
 
 function Feedback() {
     const [fileUploaded, setFileUploaded] = useState(false);
     const [loading, setLoading] = useState(false);
     const [burden, setBurden] = useState({});
     const [pdfUrl, setPdfUrl] = useState("");
+    const [scores, setScores] = useState({});
+    const [selectedCategory, setSelectedCategory] = useState(null);
+    const [categoryScores, setCategoryScores] = useState({});
+
 
     const handleFileUpload = async (text) => {
         setLoading(true);
         // Uncomment and use when API is connected
         const response = await handleExtraction(text);
-        setBurden(response);
+        setScores(response);
+        setBurden(calculateTotalBurden(response).totalBurden);
+        setCategoryScores(calculateTotalBurden(response).categoryScores);
         setFileUploaded(true);
         setLoading(false);
     };
@@ -78,10 +86,25 @@ function Feedback() {
                 </div>
             )}
             {fileUploaded && !loading && (
-                <div className="score-container">
+                <div className="score-container" style={{ maxHeight: "700px", overflowY: "auto" }}>
                     <div>
-                        <p style={{ fontSize: '17px', fontWeight: '300', marginBottom: '-3px' }}>Burden Score</p>
-                        <span style={{ fontSize: '50px', fontWeight: '600' }}>{burden.score || 'N/A'}</span>
+                        <p style={{ fontSize: '17px', fontWeight: '300', marginBottom: '-1px' }}>Burden Score</p>
+                        <span style={{ fontSize: '50px', fontWeight: '600' }}>{burden || 'N/A'}</span>
+                        <div className="scores-breakdown">
+                            {Object.keys(scores).map((category) => (
+                                <div key={category} style={{width:"100%", textAlign:"left", cursor:"pointer"}} onClick={() => setSelectedCategory(selectedCategory === category ? null : category)}>
+                                    <h3>{category} {selectedCategory === category ? <FaChevronDown style={{float: "right"}} /> : <FaChevronRight style={{float: "right"}} />}</h3>
+                                    {selectedCategory === category && (
+                                        <div>
+                                            {Object.keys(scores[category]).map((dataPoint, index) => (
+                                                <p key={dataPoint}>{`${dataPoint}: ${scores[category][dataPoint]}`}</p>
+                                            ))}
+                                        </div>
+                                    )}
+                                    <hr style={{border: "1px solid #ccc"}} />
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             )}
