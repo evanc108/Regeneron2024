@@ -7,6 +7,7 @@ import pdfToText from 'react-pdftotext';
 import { calculateTotalBurden } from '../openAIServices';
 import { FaChevronDown, FaChevronRight } from 'react-icons/fa';
 import ArrowComponent from '../components/arrow';
+import { useNavigate } from 'react-router-dom';
 
 function Feedback() {
     const [fileUploaded, setFileUploaded] = useState(false);
@@ -17,6 +18,11 @@ function Feedback() {
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [categoryScores, setCategoryScores] = useState({});
     const [testText, setTestText] = useState("");
+    const navigate = useNavigate();
+
+    const handleForwardClick = () => {
+        navigate('/18234709827134');
+    };
 
 
     const handleFileUpload = async (text) => {
@@ -114,9 +120,11 @@ function Feedback() {
                         </div>
                     </div>
                     {testText.includes("Insulin Delivery Settings") || testText.includes("Diabetes Homeless Support") ? (
-                        <ArrowComponent />
+                        <div style={{ bottom: '0', left: '0', right: '0', marginTop: '40px', backgroundColor: 'white' }}>
+                            <FaChevronRight onClick={handleForwardClick} style={{ marginLeft: '40px', fontSize: '30px' }} />
+                        </div>
                     ) : (
-                        <div style={{marginTop: "20px"}}>No related articles found.</div>
+                        <div style={{ marginTop: "20px" }}>No related articles found.</div>
                     )}
 
                 </div>

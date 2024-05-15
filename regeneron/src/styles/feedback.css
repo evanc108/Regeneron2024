@@ -66,6 +66,19 @@
     margin-left: 30px;
 }
 
+.related-score-container {
+    border-color: rgb(189, 189, 189);
+    border-width: 1px;
+    border-style: solid;
+    padding: 50px;
+    width: 23%;
+    height: 79.3vh;
+    margin-top: 5%;
+    border-radius: 15px;
+    background-color: white;
+    margin-left: 30px;
+}
+
 .score {
     font-size: large;
 }
