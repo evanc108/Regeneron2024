@@ -7,19 +7,20 @@ print a json file in this format (except you actually do all 8 categories):
 
 {
     "Medication": {
-        "Summary of step": "actual quote describing the procedure from the protocol",
-        "Summary of step": "actual quote describing the procedure from the protocol",
+        "actual quote describing the procedure from the protocol",
+        "actual quote describing the procedure from the protocol",
     },
     "Lab and Blood": {
-        "Summary of step": "actual quote describing the procedure from the protocol",
-        "Summary of step": "actual quote describing the procedure from the protocol",
+        "actual quote describing the procedure from the protocol",
+        "actual quote describing the procedure from the protocol",
+        "actual quote describing the procedure from the protocol",
+        "actual quote describing the procedure from the protocol",
     }
 }`;
 
 const apiKey = process.env.REACT_APP_API_KEY;
 
 export const handleExtraction = async (protocol) => {
-    console.log(apiKey);
     const newMessage = { role: 'user', content: protocol };
     const prompt = { role: 'system', content: extraction_prompt };
     const response = await axios.post('https://api.openai.com/v1/chat/completions', {
@@ -28,7 +29,7 @@ export const handleExtraction = async (protocol) => {
     }, {
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${apiKey}` 
+            'Authorization': `Bearer ${apiKey}`
         }
 
     });

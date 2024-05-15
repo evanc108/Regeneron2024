@@ -1,0 +1,90 @@
+{
+    "1": {
+        "title": "Digital Self-Management and Health Coaching for Type 2 Diabetes - Impact on Diabetes clinical and wellness indicators",
+        "protocolLink": "https://cdn.clinicaltrials.gov/large-docs/48/NCT04057248/Prot_SAP_000.pdf",
+        "dropout": 0.14,
+        "burden": 398,
+        "Medication": {},
+        "Lab and Blood": {
+            "Study Specimen:": "Lab test Venous blood - Blood glucose level and HbA1C Self-test Capillary whole blood - Blood glucose level",
+            "Data to be Collected:": "Venous blood test: HbA1C, Lipid profile, HCT results"
+        },
+        "Routine Examination": {},
+        "Noninvasive": {
+            "Study Category": "This clinical study is exempt from most provisions of the IDE regulation because it fits the category provided in 21 CFR 812.2(c)(3)"
+        },
+        "Invasive": {},
+        "Radiography and Imaging": {},
+        "Questionnaire": {
+            "Study Procedures:": "Each subject enrolled in the study will be requested to complete an intake questionnaire including diabetes quality of life questions",
+            "Study Flow": "During the first session, the Diabetes health coach will complete an intake session which includes aspects in Diabetes quality of life. The questions express the satisfaction of the patient with managing and controlling diabetes. The items were added according to specific quality of life module"
+        },
+        "Additional": {
+            "Product to be Evaluated": "Dario Blood Glucose Monitoring System (BGMS) and connected cloud platform",
+            "Study Objectives:": "To evaluate the impact of the Dario digital self-monitoring platform provided with diabetes management coaching on: Individual’s Quality of Life for Clinical parameters (HbA1C, weight, lipids profile, etc.) For people with Type 2 Diabetes at end of study vs. baseline.",
+            "Inclusion/Exclusion Criteria": "List of criteria for inclusion and exclusion in the study",
+            "Adverse Events": "List of definitions for adverse events and reporting requirements"
+        }
+    },
+    "2": {
+        "title": "Insulin Pump to Multiple Daily Injection Transition Clinical Trial (TRANSITION)",
+        "protocolLink": "https://cdn.clinicaltrials.gov/large-docs/91/NCT03987191/Prot_SAP_000.pdf",
+        "dropout": 0.06,
+        "burden": 472,
+        "Medication": {
+            "Administer insulin degludec U-100 and insulin aspart U-100 depending on calculated insulin requirement during randomization phase.": "Second, blinded CGM (Dexcom G6) will be inserted.",
+            "Subjects will receive 1 pen of insulin degludec U-100 and 1-2 pen of insulin aspart U-100 depending on calculated insulin requirement during randomization phase.": "Randomization process can start.",
+            "Insulin degludec dose conversion guidance will be provided based on patient's average basal insulin for the last 3 days.": "Subjects will be randomized equally into one of the two possible treatment arms."
+        },
+        "Lab and Blood": {
+            "Point of care HbA1c and spot urine pregnancy test for women in reproductive age group will be done at the time of screening.": "All subjects will undergo review of inclusion and exclusion criteria.",
+            "A non-fasting blood will be drawn for complete metabolic panel (CMP) at the time of screening.": "For laboratory results such as CMP, 'results pending' will be selected at Visit 1, week 0."
+        },
+        "Routine Examination": {
+            "Vital signs, BMI, and physical examination will be conducted at each visit.": "Blood glucose meter download and review of self-monitoring of blood glucose (SMBG) will be done at each visit."
+        },
+        "Noninvasive": {
+            "Blinded CGM insertion/training will be provided at screening visit.": "Before screening takes place, subjects will be provided with written information about the trial and the procedures involved."
+        },
+        "Invasive": {
+            "Blood draw for POC A1c and urine pregnancy test will be conducted at screening.": "A non-fasting blood will be drawn for complete metabolic panel (CMP) at the time of screening."
+        },
+        "Radiography and Imaging": {},
+        "Questionnaire": {
+            "Patients will undergo the GOLD questionnaire to exclude hypoglycemia unawareness.": "Primary and secondary endpoints will be analyzed from 1-week of blinded CGM use during randomization phase."
+        },
+        "Additional": {
+            "Subjects will be trained on function modalities of the blinded CGM.": "Dexcom G6 will be inserted either on abdomen or upper arm depending on patient's preference."
+        }
+    },
+    "3": {
+        "title": "Medication Adherence Clinical Decision Support (ADH-Wizard)",
+        "protocolLink": "https://cdn.clinicaltrials.gov/large-docs/20/NCT03748420/Prot_SAP_000.pdf",
+        "dropout": 0.09,
+        "burden": 570,
+        "Noninvasive": {
+            "EHR data is exchanged with Wizard web service in the background at the patient’s first and subsequent primary care encounters occurring during the study duration. An encounter-based limited data set is collected and stored in a data repository (intervention & control)": "X X X X X",
+            "All eligible patients are randomly assigned a study identification (ID) the first time they are eligible for CDS at a study clinic": "X",
+            "Based on the study ID, an eligible patient is then randomly assigned to adherence intervention or control": "X",
+            "After Wizard determines study eligibility and CDS recommendations, it prompts CDS tools to be printed for the intervention-assigned patient and their provider through a Best Practice Advisory (BPA) for rooming staff at each primary care encounter during the study period": "X X X X",
+            "The eligible intervention-assigned patient has an attempted exposure to Adherence CDS at each primary care encounter during the study period": "X X X X",
+            "Wizard algorithms are run outside of encounters on all study eligible patients at set intervals (6, 12, and 18 months) for analysis purposes. A limited data set is collected and stored in a data repository (intervention & control patients)": "X X X",
+            "An eligible intervention-assigned patient is added to a pharmacist outreach intervention registry if study criteria are still met (not at goal and not adherent)": "X",
+            "An eligible intervention-assigned patient is assigned to a pharmacist": "X",
+            "Pharmacist calls eligible patient (multiple attempts) for adherence assessment and action plan": "X",
+            "Pharmacist follow-up per action plan": "X X",
+            "Experience and satisfaction surveys sent to a random group of patients (intervention & control)": "X X"
+        },
+        "Invasive": {},
+        "Routine Examination": {},
+        "Questionnaire": {
+            "Survey assessed patient reported adherence": "X",
+            "Patient and provider experience and satisfaction": "X",
+            "Qualitative analysis of CDS user experience": ""
+        },
+        "Medication": {},
+        "Lab and Blood": {},
+        "Radiography and Imaging": {},
+        "Additional": {}
+    }
+}
